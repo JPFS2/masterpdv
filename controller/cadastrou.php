@@ -7,7 +7,7 @@ include 'conexao.php';
 
 
 
-$sql = "INSERT INTO `usuario`(`nome`, `email`, `senha`) VALUES ('$nome','$email','MD5($senha)')";
+$sql = "INSERT INTO `usuario`(`nome`, `email`, `senha`) VALUES ('$nome','$email','$senha')";
 $inserir = mysqli_query($conexao,$sql);
 
 header('location: ../pages/forms/validation.html')
