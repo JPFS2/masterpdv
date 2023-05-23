@@ -2,7 +2,7 @@
 require 'config.php';
 
 $lista = [];
-$sql = $pdo->query("SELECT * FROM usuarios");
+$sql = $pdo->query("SELECT * FROM usuario");
 
 if($sql->rowCount() ){
     $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
