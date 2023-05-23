@@ -2,7 +2,7 @@
 require '../../action/config.php';
 
 $lista = [];
-$sql = $pdo->query("SELECT * FROM empresa");
+$sql = $pdo->query("SELECT * FROM empresa where codempresa = 1");
 
 if($sql->rowCount() ){
     $lista = $sql->fetch(PDO::FETCH_ASSOC);
@@ -148,13 +148,13 @@ if($sql->rowCount() ){
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="empresa.html" class="nav-link">
+                                    <a href="empresa.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Empresa</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="validation.html" class="nav-link">
+                                    <a href="validation.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Usuários</p>
                                     </a>
@@ -304,7 +304,7 @@ if($sql->rowCount() ){
                                     </button>
                                 </div>
                             </div>
-                            <form action="../../controller/cadastroe.php" method="post">
+                            <form action="../../action/adicionarE.php" method="post">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-6">
@@ -411,21 +411,21 @@ if($sql->rowCount() ){
                                             <div class="form-group">
                                                 <label for="inputEstimatedBudget">UF</label>
                                                 <input type="text" name="uf" id="inputEstimatedBudget"
-                                                    class="form-control" value="CE">
+                                                    class="form-control" value="<?= $lista['uf']?>">
                                             </div>
                                         </div>
                                         <div class="col-7">
                                             <div class="form-group">
                                                 <label for="inputEstimatedBudget">Complemento</label>
                                                 <input type="text" name="complemento" id="inputEstimatedBudget"
-                                                    class="form-control" value="Ao lado do velho do coco">
+                                                    class="form-control" value="<?= $lista['complemento']?>">
                                             </div>
                                         </div>
                                         <div class="col-4">
                                             <div class="form-group">
                                                 <label for="inputEstimatedBudget">Email</label>
                                                 <input type="text" name="email" id="inputEstimatedBudget"
-                                                    class="form-control" placeholder="contato@empresa.com">
+                                                    class="form-control" value="<?= $lista['email']?>">
                                             </div>
                                         </div>
 
@@ -438,7 +438,7 @@ if($sql->rowCount() ){
                                                                 class="fab fa-instagram"></i></span>
                                                     </div>
                                                     <input type="text" name="instagram" class="form-control"
-                                                        placeholder="">
+                                                        value="<?= $lista['instagram']?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -453,7 +453,7 @@ if($sql->rowCount() ){
                                                                 class="fab fa-facebook-f"></i></i></span>
                                                     </div>
                                                     <input type="text" name="facebook" class="form-control"
-                                                        placeholder="">
+                                                       value="<?= $lista['facebook']?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -462,8 +462,6 @@ if($sql->rowCount() ){
 
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <input type="submit" value="Cancelar"
-                                                    class="btn bg-gradient-danger float-right m-1">
                                                 <input type="submit" value="Salvar"
                                                     class="btn btn-success float-right m-1">
                                             </div>

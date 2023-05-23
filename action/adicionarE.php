@@ -29,7 +29,7 @@ if($razao &&  $fantasia && $cnpj && $cel && $cep && $endereco && $numero && $bai
 
     if($sql->rowCount() == 0){
 
-        $sql = $pdo->prepare("update empresa set razao = :razao,fantasia = :fantasia,cnpj = :cnpj,ie = :ie,im = :im,tel = :tel,cel = :cel,cep = :cep,endereco = :endereco,numero = :numero,bairro = :bairro,cidade = :cidade,uf = :uf,complemento = :complemento,email = :email,instagram = :instagram,facebook = :facebook where codempresa = :codempresa");
+        $sql = $pdo->prepare("update empresa set razao = :razao,fantasia = :fantasia,cnpj = :cnpj,ie = :ie,im = :im,tel = :tel,cel = :cel,cep = :cep,endereco = :endereco,numero = :numero,bairro = :bairro,cidade = :cidade,uf = :uf,complemento = :complemento,email = :email,instagram = :instagram,facebook = :facebook where codempresa = 1");
         $sql->bindValue(':razao',$razao);
         $sql->bindValue(':fantasia',$fantasia);
         $sql->bindValue(':cnpj',$cnpj);
@@ -49,14 +49,14 @@ if($razao &&  $fantasia && $cnpj && $cel && $cep && $endereco && $numero && $bai
         $sql->bindValue(':facebook',$facebook);      
         $sql->execute();
     
-        header('Location: ../pages/forms/empresa.html');
+        header('Location: ../pages/forms/empresa.php');
         exit;
 
     }
-    header('Location: ../pages/forms/empresa.html');
+    header('Location: ../pages/forms/empresa.php');
     exit;
     
 }else{
-    header('Location: ../pages/forms/empresa.html');
+    header('Location: ../pages/forms/empresa.php');
     exit;
 }
