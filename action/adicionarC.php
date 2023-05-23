@@ -2,14 +2,25 @@
 require 'config.php';
 
 $nome = filter_input(INPUT_POST,'nome');
-$email = filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL);
-$senha = filter_input(INPUT_POST,'senha');
+$cnpj = filter_input(INPUT_POST,'cnpj');
+$cpf = filter_input(INPUT_POST,'cpf');
+$ie = filter_input(INPUT_POST,'ie');
+$cel = filter_input(INPUT_POST,'cel');
+$cep = filter_input(INPUT_POST,'cep');
+$endereco = filter_input(INPUT_POST,'endereco');
+$numero = filter_input(INPUT_POST,'numero');
+$bairro = filter_input(INPUT_POST,'bairro');
+$cidade = filter_input(INPUT_POST,'cidade');
+$uf = filter_input(INPUT_POST,'uf');
+$complemento = filter_input(INPUT_POST,'complemento');
+$email = filter_input(INPUT_POST,'email');
+
 
 if($nome &&  $email && $senha){
 
 
-    $sql = $pdo->prepare("SELECT * FROM usuario WHERE email = :email");
-    $sql->bindValue(':email', $email);
+    $sql = $pdo->prepare("SELECT * FROM cliente WHERE cpf = :cpf");
+    $sql->bindValue(':cpf', $cpf);
     $sql->execute();
 
     if($sql->rowCount() == 0){
