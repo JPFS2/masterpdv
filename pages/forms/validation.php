@@ -1,3 +1,14 @@
+<?php 
+require '../../action/config.php';
+
+$lista = [];
+$sql = $pdo->query("SELECT * FROM usuario");
+
+if($sql->rowCount() ){
+    $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -287,6 +298,7 @@
             </div>
             <!-- /.card -->
             <!-- Main content -->
+            
     <section class="content">
       <div class="container-fluid">
         <div class="row">
@@ -295,79 +307,33 @@
               <div class="card-header">
                 <h3 class="card-title">Usuários cadastrados</h3>
               </div>
+              
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                   <tr>
+                    <th>ID</th>
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Senha</th>
+                    <th></th>
                   </tr>
                   </thead>
                   <tbody>
+                  <?php foreach($lista as $usuario): ?>
                   <tr>
-                    <td>Trident</td>
-                    <td>teste@teste.com
-                    </td>
-                    <td>************</td>
+                    <td><?= $usuario['id']; ?></td>
+                    <td><?= $usuario['nome']; ?></td>
+                    <td><?= $usuario['email']; ?></td>
+                    <td><?= $usuario['senha']; ?></td>
+                    <th>
+                <a href="../../action/editar.php?id=<?= $usuario->getId()?>">Editar</a>
+                <a href="../../action/excluir.php?id=<?= $usuario->getId()?>" onclick="return confirm('Tem certeza que deseja excluir ?')">Excluir</a>
+            </th>
                   </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>teste@teste.com
-                    </td>
-                    <td>************</td>
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>teste@teste.com
-                    </td>
-                    <td>************</td>
-            
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>teste@teste.com
-                    </td>
-                    <td>************</td>
-        
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>teste@teste.com
-                    </td>
-                    <td>************</td>
-      
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>teste@teste.com
-                    </td>
-                    <td>************</td>
-                   
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>teste@teste.com
-                    </td>
-                    <td>************</td>
-                   
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>teste@teste.com
-                    </td>
-                    <td>************</td>
-                   
-                  </tr>
+                  <?php endforeach; ?>
                   </tbody>
-                  <tfoot>
-                  <tr>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Senha</th>
-                  </tr>
-                  </tfoot>
                 </table>
               </div>
               <!-- /.card-body -->
