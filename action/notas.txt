@@ -1,0 +1,21 @@
+1 - Uso do PhpMyAdmin
+2 - Conexão de banco via PDO
+
+$pdo = new PDO("mysql:dbname=".$db_name.";host=".$db_host,$db_user,$db_pass);
+
+3 - INSERINDO DADOS (bindValue caso alterar o valor apos o uso ele não altera, bindParam caso alterar o valor apos o uso ele altera)
+
+$pdo->prepare();
+$pdo->bindValue();
+$pdo->Execute()
+
+4 - Update é similar a adicionar prepara, coloca os valores e executa
+
+5 - BUSCANDO POR ID rowCount() retorna se tem linhas referente a pesquisa
+
+$sql->rowCount() > 0
+$sql->fetch()
+
+6 - Busca geral
+
+$sql->fetchAll()
