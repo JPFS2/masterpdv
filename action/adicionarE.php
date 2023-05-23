@@ -23,13 +23,13 @@ $facebook = filter_input(INPUT_POST,'facebook');
 if($razao &&  $fantasia && $cnpj && $cel && $cep && $endereco && $numero && $bairro && $cidade && $uf){
 
 
-    $sql = $pdo->prepare("SELECT * FROM empresa WHERE email = :email");
-    $sql->bindValue(':email', $email);
+    $sql = $pdo->prepare("SELECT * FROM empresa WHERE codempresa = :codempresa");
+    $sql->bindValue(':codempresa', $codempresa);
     $sql->execute();
 
     if($sql->rowCount() == 0){
 
-        $sql = $pdo->prepare("INSERT INTO empresa(razao,fantasia,cnpj,ie,im,tel,cel,cep,endereco,numero,bairro,cidade,uf,complemento,email,instagram,facebook) VALUES (:razao,:fantasia,:cnpj,:ie,:im,:tel,:cel,:cep,:endereco,:numero,:bairro,:cidade,:uf,:complemento,:email,:instagram,:facebook)");
+        $sql = $pdo->prepare("update empresa set razao = :razao,fantasia = :fantasia,cnpj = :cnpj,ie = :ie,im = :im,tel = :tel,cel = :cel,cep = :cep,endereco = :endereco,numero = :numero,bairro = :bairro,cidade = :cidade,uf = :uf,complemento = :complemento,email = :email,instagram = :instagram,facebook = :facebook where codempresa = :codempresa");
         $sql->bindValue(':razao',$razao);
         $sql->bindValue(':fantasia',$fantasia);
         $sql->bindValue(':cnpj',$cnpj);

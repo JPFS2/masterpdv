@@ -328,8 +328,6 @@ if($sql->rowCount() ){
                     <td><?= $usuario['email']; ?></td>
                     <td><?= $usuario['senha']; ?></td>
                     <th>
-                <a href="../../action/editar.php?id=<?= $usuario->getId()?>">Editar</a>
-                <a href="../../action/excluir.php?id=<?= $usuario->getId()?>" onclick="return confirm('Tem certeza que deseja excluir ?')">Excluir</a>
             </th>
                   </tr>
                   <?php endforeach; ?>
