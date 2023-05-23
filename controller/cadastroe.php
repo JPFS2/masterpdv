@@ -19,11 +19,9 @@ include 'conexao.php';
  $instagram = $_POST['instagram'];
  $facebook = $_POST['facebook'];
 
-$senhaEncrip = MD5($senha);
-
 $sql = "INSERT INTO `empresa`(`razao`, `fantasia`, `cnpj`, `ie`, `im`, `tel`, `cel`, `cep`, `endereco`, `numero`, `bairro`, `cidade`, `uf`, `complemento`, `email`, `instagram`, `facebook`) VALUES ('$razao','$fantasia','$cnpj','$ie','$im','$tel','$cel','$cep','$endereco','$numero','$bairro','$cidade','$uf','$complemento','$email','$instagram','$facebook')";
 $inserir = mysqli_query($conexao,$sql);
 
-header('Location: ../pages/forms/empresa.html')
+header('Location: ../pages/forms/empresa.html');
 
 ?>
