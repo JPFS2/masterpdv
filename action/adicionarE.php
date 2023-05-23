@@ -20,16 +20,16 @@ $instagram = filter_input(INPUT_POST,'instagram');
 $facebook = filter_input(INPUT_POST,'facebook');
 
 
-if($nome &&  $email && $senha){
+if($razao &&  $fantasia && $cnpj && $cel && $cep && $endereco && $numero && $bairro && $cidade && $uf){
 
 
-    $sql = $pdo->prepare("SELECT * FROM usuario WHERE email = :email");
+    $sql = $pdo->prepare("SELECT * FROM empresa WHERE email = :email");
     $sql->bindValue(':email', $email);
     $sql->execute();
 
     if($sql->rowCount() == 0){
 
-        $sql = $pdo->prepare("INSERT INTO usuario(nome,email,senha) VALUES (:nome, :email,:senha)");
+        $sql = $pdo->prepare("INSERT INTO empresa(razao,fantasia,cnpj,ie,im,tel,cel,cep,endereco,numero,bairro,cidade,uf,complemento,email,instagram,facebook) VALUES (:razao,:fantasia,:cnpj,:ie,:im,:tel,:cel,:cep,:endereco,:numero,:bairro,:cidade,:uf,:complemento,:email,:instagram,:facebook)");
         $sql->bindValue(':nome',$nome);
         $sql->bindValue(':email',$email);        
         $sql->bindValue(':senha', md5($senha));
