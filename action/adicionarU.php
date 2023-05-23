@@ -20,14 +20,14 @@ if($nome &&  $email && $senha){
         $sql->bindValue(':senha', md5($senha));
         $sql->execute();
     
-        header('Location: ../pages/forms/validation.html');
+        header('Location: ../pages/forms/validation.php');
         exit;
 
     }
-    header('Location: ../pages/forms/validation.html');
+    header('Location: ../pages/forms/validation.php');
     exit;
     
 }else{
-    header('Location: ../pages/forms/validation.html');
+    header('Location: ../pages/forms/validation.php');
     exit;
 }

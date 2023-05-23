@@ -30,19 +30,33 @@ if($razao &&  $fantasia && $cnpj && $cel && $cep && $endereco && $numero && $bai
     if($sql->rowCount() == 0){
 
         $sql = $pdo->prepare("INSERT INTO empresa(razao,fantasia,cnpj,ie,im,tel,cel,cep,endereco,numero,bairro,cidade,uf,complemento,email,instagram,facebook) VALUES (:razao,:fantasia,:cnpj,:ie,:im,:tel,:cel,:cep,:endereco,:numero,:bairro,:cidade,:uf,:complemento,:email,:instagram,:facebook)");
-        $sql->bindValue(':nome',$nome);
-        $sql->bindValue(':email',$email);        
-        $sql->bindValue(':senha', md5($senha));
+        $sql->bindValue(':razao',$razao);
+        $sql->bindValue(':fantasia',$fantasia);
+        $sql->bindValue(':cnpj',$cnpj);
+        $sql->bindValue(':ie',$ie); 
+        $sql->bindValue(':im',$im);
+        $sql->bindValue(':tel',$tel); 
+        $sql->bindValue(':cel',$cel);
+        $sql->bindValue(':cep',$cep); 
+        $sql->bindValue(':endereco',$endereco);
+        $sql->bindValue(':numero',$numero); 
+        $sql->bindValue(':bairro',$bairro);
+        $sql->bindValue(':cidade',$cidade); 
+        $sql->bindValue(':uf',$uf);
+        $sql->bindValue(':complemento',$complemento);
+        $sql->bindValue(':email',$email);
+        $sql->bindValue(':instagram',$instagram);   
+        $sql->bindValue(':facebook',$facebook);      
         $sql->execute();
     
-        header('Location: ../pages/forms/validation.html');
+        header('Location: ../pages/forms/empresa.html');
         exit;
 
     }
-    header('Location: ../pages/forms/validation.html');
+    header('Location: ../pages/forms/empresa.html');
     exit;
     
 }else{
-    header('Location: ../pages/forms/validation.html');
+    header('Location: ../pages/forms/empresa.html');
     exit;
 }
