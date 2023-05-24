@@ -284,6 +284,8 @@ if($sql->rowCount() ){
                             <div class="card card-primary">
                                 <div class="card-header">
                                     <h3 class="card-title">Cadastre um novo cliente</h3>
+                                    <div class="card-tools">
+                                    </div>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
@@ -445,15 +447,15 @@ if($sql->rowCount() ){
                                                                 <td><?= $cliente['cpf']; ?></td>
                                                                 <td><?= $cliente['ie']; ?></td>
                                                                 <td><?= $cliente['cel']; ?></td>
-                                                                <td><?= $cliente['email']; ?></td>                                                               
+                                                                <td><?= $cliente['email']; ?></td>
                                                                 <td><?= $cliente['cep']; ?></td>
                                                                 <td><?= $cliente['uf']; ?></td>
                                                                 <td><?= $cliente['cidade']; ?></td>
                                                                 <td><?= $cliente['bairro']; ?></td>
                                                                 <td><?= $cliente['endereco']; ?></td>
-                                                                <td><?= $cliente['numero']; ?></td>                                                                                                                                                                 
+                                                                <td><?= $cliente['numero']; ?></td>
                                                                 <td><?= $cliente['complemento']; ?></td>
-                                                                
+
                                                             </tr>
                                                             <?php endforeach; ?>
                                                     </table>
@@ -546,8 +548,8 @@ if($sql->rowCount() ){
                                 $(element).removeClass('is-invalid');
                             }
                         });
-                    });
-                    </script>
-</body>
+                    }); <
+                    /body>
 
-</html>
+                    <
+                    /html>
