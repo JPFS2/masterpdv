@@ -124,7 +124,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="validation.html" class="nav-link">
+                                    <a href="empresa.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Empresa</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="validation.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Usuários</p>
                                     </a>
@@ -272,123 +278,127 @@
                                 <!-- /.card-header -->
                                 <!-- form start -->
                                 <form action="../../action/adicionarC.php" method="post">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <imput type="hidden" value="<?= $lista['codcliente']?>">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-7">
+                                                <imput>
+                                                    <div class="form-group">
+                                                        <label for="inputEstimatedBudget">Nome</label>
+                                                        <input type="text" name="razao" id="inputEstimatedBudget"
+                                                            class="form-control">
+                                                    </div>
+                                            </div>
+                                            <div class="col-2">
                                                 <div class="form-group">
-                                                    <label for="inputEstimatedBudget">Nome</label>
-                                                    <input type="text" name="razao" id="inputEstimatedBudget"
-                                                        class="form-control" value="<?= $lista['Nome']?>">
+                                                    <label for="inputEstimatedBudget">CNPJ</label>
+                                                    <input type="text" name="cnpj" id="inputEstimatedBudget"
+                                                        class="form-control">
                                                 </div>
-                                        </div>
-                                        <div class="col-2">
-                                            <div class="form-group">
-                                                <label for="inputEstimatedBudget">CNPJ</label>
-                                                <input type="text" name="cnpj" id="inputEstimatedBudget"
-                                                    class="form-control" value="<?= $lista['cnpj']?>">
                                             </div>
-                                        </div>
-                                        <div class="col-2">
-                                            <div class="form-group">
-                                                <label for="inputEstimatedBudget">CPF</label>
-                                                <input type="text" name="ie" id="inputEstimatedBudget"
-                                                    class="form-control" value="<?= $lista['cpf']?>">
+                                            <div class="col-2">
+                                                <div class="form-group">
+                                                    <label for="inputEstimatedBudget">CPF</label>
+                                                    <input type="text" name="ie" id="inputEstimatedBudget"
+                                                        class="form-control">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-2">
-                                            <div class="form-group">
-                                                <label for="inputEstimatedBudget">Inscrição estadual</label>
-                                                <input type="text" name="im" id="inputEstimatedBudget"
-                                                    class="form-control" value="<?= $lista['ie']?>">
+                                            <div class="col-3">
+                                                <div class="form-group">
+                                                    <label for="inputEstimatedBudget">Inscrição estadual</label>
+                                                    <input type="text" name="im" id="inputEstimatedBudget"
+                                                        class="form-control">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div class="form-group">
-                                                <label for="inputEstimatedBudget">Celular / Whasts APP</label>
-                                                <input type="text" name="cel" id="inputEstimatedBudget"
-                                                    class="form-control" value="<?= $lista['cel']?>">
+                                            <div class="col-3">
+                                                <div class="form-group">
+                                                    <label for="inputEstimatedBudget">Celular / Whasts APP</label>
+                                                    <input type="text" name="cel" id="inputEstimatedBudget"
+                                                        class="form-control">
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-2">
-                                            <div class="form-group">
-                                                <label for="inputEstimatedBudget">CEP</label>
-                                                <input type="text" name="cep" id="inputEstimatedBudget"
-                                                    class="form-control" value="<?= $lista['cep']?>">
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="form-group">
-                                                <label for="inputEstimatedBudget">Endereço</label>
-                                                <input type="text" name="endereco" id="inputEstimatedBudget"
-                                                    class="form-control" value="<?= $lista['tel']?>">
-                                            </div>
-                                        </div>
-                                        <div class="col-1">
-                                            <div class="form-group">
-                                                <label for="inputEstimatedBudget">Numero</label>
-                                                <input type="text" name="numero" id="inputEstimatedBudget"
-                                                    class="form-control" value="<?= $lista['numero']?>">
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div class="form-group">
-                                                <label for="inputEstimatedBudget">Bairro</label>
-                                                <input type="text" name="bairro" id="inputEstimatedBudget"
-                                                    class="form-control" value="<?= $lista['bairro']?>">
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="form-group">
-                                                <label for="inputEstimatedBudget">Cidade</label>
-                                                <select name="cidade"
-                                                    class="form-control select2bs4 select2-hidden-accessible"
-                                                    style="width: 100%;" data-select2-id="21" tabindex="-1"
-                                                    aria-hidden="true">
-                                                    <option selected="selected" data-select2-id="23">Juazeiro do Norte
-                                                    </option>
-                                                    <option data-select2-id="42">Crato</option>
-                                                    <option data-select2-id="43">Barbalha</option>
-                                                    <option data-select2-id="44">Delaware</option>
-                                                    <option data-select2-id="45">Tennessee</option>
-                                                    <option data-select2-id="46">Texas</option>
-                                                    <option data-select2-id="47">Washington</option>
-                                                </select>
+                                            <div class="col-5">
+                                                <div class="form-group">
+                                                    <label for="inputEstimatedBudget">Email</label>
+                                                    <input type="text" name="email" id="inputEstimatedBudget"
+                                                        class="form-control">
+                                                </div>
                                             </div>
                                         </div>
 
-                                        <div class="col-1">
-                                            <div class="form-group">
-                                                <label for="inputEstimatedBudget">UF</label>
-                                                <input type="text" name="uf" id="inputEstimatedBudget"
-                                                    class="form-control" value="<?= $lista['uf']?>">
+                                        <div class="row">
+                                            <div class="col-2">
+                                                <div class="form-group">
+                                                    <label for="inputEstimatedBudget">CEP</label>
+                                                    <input type="text" name="cep" id="inputEstimatedBudget"
+                                                        class="form-control">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-7">
-                                            <div class="form-group">
-                                                <label for="inputEstimatedBudget">Complemento</label>
-                                                <input type="text" name="complemento" id="inputEstimatedBudget"
-                                                    class="form-control" value="<?= $lista['complemento']?>">
+                                            <div class="col-1">
+                                                <div class="form-group">
+                                                    <label for="inputEstimatedBudget">UF</label>
+                                                    <input type="text" name="uf" id="inputEstimatedBudget"
+                                                        class="form-control">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="form-group">
-                                                <label for="inputEstimatedBudget">Email</label>
-                                                <input type="text" name="email" id="inputEstimatedBudget"
-                                                    class="form-control" value="<?= $lista['email']?>">
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label for="inputEstimatedBudget">Cidade</label>
+                                                    <select name="cidade"
+                                                        class="form-control select2bs4 select2-hidden-accessible"
+                                                        style="width: 100%;" data-select2-id="21" tabindex="-1"
+                                                        aria-hidden="true">
+                                                        <option selected="selected" data-select2-id="23">Juazeiro do
+                                                            Norte
+                                                        </option>
+                                                        <option data-select2-id="42">Crato</option>
+                                                        <option data-select2-id="43">Barbalha</option>
+                                                        <option data-select2-id="44">Delaware</option>
+                                                        <option data-select2-id="45">Tennessee</option>
+                                                        <option data-select2-id="46">Texas</option>
+                                                        <option data-select2-id="47">Washington</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <input type="submit" value="Salvar"
-                                                    class="btn btn-success float-right m-1">
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label for="inputEstimatedBudget">Bairro</label>
+                                                    <input type="text" name="bairro" id="inputEstimatedBudget"
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="inputEstimatedBudget">Endereço</label>
+                                                    <input type="text" name="endereco" id="inputEstimatedBudget"
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <div class="form-group">
+                                                    <label for="inputEstimatedBudget">Numero</label>
+                                                    <input type="text" name="numero" id="inputEstimatedBudget"
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-5">
+                                                <div class="form-group">
+                                                    <label for="inputEstimatedBudget">Complemento</label>
+                                                    <input type="text" name="complemento" id="inputEstimatedBudget"
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <input type="submit" value="Salvar"
+                                                        class="btn btn-success float-right m-1">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                            </form>
+                                </form>
                             </div>
                             <!-- /.card -->
                             <!-- Main content -->

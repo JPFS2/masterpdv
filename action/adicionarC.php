@@ -25,20 +25,30 @@ if($nome &&  $email && $senha){
 
     if($sql->rowCount() == 0){
 
-        $sql = $pdo->prepare("INSERT INTO usuario(nome,email,senha) VALUES (:nome, :email,:senha)");
+        $sql = $pdo->prepare("INSERT INTO cliente(nome,cnpj,cpf,ie,cel,cep,endereco,numero,bairro,cidade,uf,complemento,email) VALUES (:nome,:cnpj,:cpf,:ie,:cel,:cep,:endereco,:numero,:bairro,:cidade,:uf,:complemento,:email)");
         $sql->bindValue(':nome',$nome);
-        $sql->bindValue(':email',$email);        
-        $sql->bindValue(':senha', md5($senha));
+        $sql->bindValue(':cnpj',$cnpj);
+        $sql->bindValue(':cpf',$cpf);
+        $sql->bindValue(':ie',$ie); 
+        $sql->bindValue(':cel',$cel);
+        $sql->bindValue(':cep',$cep); 
+        $sql->bindValue(':endereco',$endereco);
+        $sql->bindValue(':numero',$numero); 
+        $sql->bindValue(':bairro',$bairro);
+        $sql->bindValue(':cidade',$cidade); 
+        $sql->bindValue(':uf',$uf);
+        $sql->bindValue(':complemento',$complemento); 
+        $sql->bindValue(':email',$email); 
         $sql->execute();
     
-        header('Location: ../pages/forms/validation.php');
+        header('Location: ../pages/forms/clientes.php');
         exit;
 
     }
-    header('Location: ../pages/forms/validation.php');
+    header('Location: ../pages/forms/clientes.php');
     exit;
     
 }else{
-    header('Location: ../pages/forms/validation.php');
+    header('Location: ../pages/forms/clientes.php');
     exit;
 }
