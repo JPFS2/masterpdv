@@ -399,29 +399,37 @@ if($sql->rowCount() ){
                                                     <table id="example2" class="table table-bordered table-hover">
                                                         <thead>
                                                             <tr>
+                                                                <th>Código</th>
                                                                 <th>Razão Social</th>
-                                                                <th>Nome Fantasia</th>
+                                                                <th>Fantasia</th>
                                                                 <th>CNPJ</th>
-                                                                <th>Endereço</th>
+                                                                <th>IE</th>
                                                                 <th>Contato</th>
+                                                                <th>E-mail</th>
+                                                                <th>CEP</th>
+                                                                <th>UF</th>
+                                                                <th>Cidade</th>
+                                                                <th>Bairro</th>
+                                                                <th>Endereço</th>
+                                                                <th>Número</th>                                                              
                                                             </tr>
                                                         </thead>
                                                         <?php foreach($lista as $fornecedor): ?>
                                                         <tbody>
                                                             <tr>
-                                                                <td><?= $cliente['codfornce']; ?></td>
-                                                                <td><?= $cliente['razao']; ?></td>
-                                                                <td><?= $cliente['fantasia']; ?></td>
-                                                                <td><?= $cliente['cnpj']; ?></td>
-                                                                <td><?= $cliente['ie']; ?></td>
-                                                                <td><?= $cliente['tel']; ?></td>
-                                                                <td><?= $cliente['email']; ?></td>
-                                                                <td><?= $cliente['cep']; ?></td>
-                                                                <td><?= $cliente['uf']; ?></td>
-                                                                <td><?= $cliente['cidade']; ?></td>
-                                                                <td><?= $cliente['bairro']; ?></td>
-                                                                <td><?= $cliente['endereco']; ?></td>
-                                                                <td><?= $cliente['numero']; ?></td>
+                                                                <td><?= $fornecedor['codfornecedor']; ?></td>
+                                                                <td><?= $fornecedor['razao']; ?></td>
+                                                                <td><?= $fornecedor['fantasia']; ?></td>
+                                                                <td><?= $fornecedor['cnpj']; ?></td>
+                                                                <td><?= $fornecedor['ie']; ?></td>
+                                                                <td><?= $fornecedor['tel']; ?></td>
+                                                                <td><?= $fornecedor['email']; ?></td>
+                                                                <td><?= $fornecedor['cep']; ?></td>
+                                                                <td><?= $fornecedor['uf']; ?></td>
+                                                                <td><?= $fornecedor['cidade']; ?></td>
+                                                                <td><?= $fornecedor['bairro']; ?></td>
+                                                                <td><?= $fornecedor['endereco']; ?></td>
+                                                                <td><?= $fornecedor['numero']; ?></td>
                                                             </tr>
                                                         </tbody>
                                                         <?php endforeach; ?>
