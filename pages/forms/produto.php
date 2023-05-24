@@ -275,46 +275,46 @@
                                         <div class="col-3">
                                             <div class="form-group">
                                                 <label for="inputEstimatedBudget">Tipo</label>
-                                                <select name="tipo" 
+                                                <select name="tipo"
                                                     class="form-control select2bs4 select2-hidden-accessible"
                                                     style="width: 100%;" data-select2-id="21" tabindex="-1"
                                                     aria-hidden="true">
                                                     <option selected="selected" data-select2-id="23">Celular</option>
-                                                    <option data-toggle-form-edit="#id-form" data-select2-id="42">Acessório</option>
+                                                    <option data-toggle-form-edit="#id-form" data-select2-id="42">
+                                                        Acessório</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                    <div class="col-6">
-                                            <imput>
-                                                <div class="form-group">
-                                                    <label for="inputEstimatedBudget">Descrição</label>
-                                                    <input type="text" name="descricao" id="inputEstimatedBudget"
-                                                        class="form-control">
-                                                </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="inputEstimatedBudget">Descrição</label>
+                                                <input type="text" name="descricao" id="inputEstimatedBudget"
+                                                    class="form-control">
+                                            </div>
                                         </div>
                                         <div class="col-6">
-                                            <imput>
-                                                <div class="form-group">
-                                                    <label for="inputEstimatedBudget">Modelo</label>
-                                                    <input type="text" name="modelo" id="inputEstimatedBudget"
-                                                        class="form-control">
-                                                </div>
+                                            <div class="form-group">
+                                                <label for="inputEstimatedBudget">Modelo</label>
+                                                <input type="text" name="modelo" id="inputEstimatedBudget"
+                                                    class="form-control">
+                                            </div>
                                         </div>
                                         <div class="col-3">
                                             <div class="form-group">
                                                 <label for="inputEstimatedBudget">Armazenamento Interno</label>
-                                                <input type="text" name="armazenamento" class="form-control" disabled="">
+                                                <input type="text" name="armazenamento" class="form-control"
+                                                   >
                                             </div>
                                         </div>
                                         <div class="col-3">
                                             <div class="form-group">
                                                 <label for="inputEstimatedBudget">Memória</label>
-                                                <input type="text" name="memoria" class="form-control" disabled="">
+                                                <input type="text" name="memoria" class="form-control">
                                             </div>
                                         </div>
-
+                                        </imput>
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <input type="submit" value="Salvar"
