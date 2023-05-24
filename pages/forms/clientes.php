@@ -294,7 +294,7 @@ if($sql->rowCount() ){
                                                 <imput>
                                                     <div class="form-group">
                                                         <label for="inputEstimatedBudget">Nome</label>
-                                                        <input type="text" name="razao" id="inputEstimatedBudget"
+                                                        <input type="text" name="nome" id="inputEstimatedBudget"
                                                             class="form-control">
                                                     </div>
                                             </div>
@@ -308,14 +308,14 @@ if($sql->rowCount() ){
                                             <div class="col-2">
                                                 <div class="form-group">
                                                     <label for="inputEstimatedBudget">CPF</label>
-                                                    <input type="text" name="ie" id="inputEstimatedBudget"
+                                                    <input type="text" name="cpf" id="inputEstimatedBudget"
                                                         class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="inputEstimatedBudget">Inscrição estadual</label>
-                                                    <input type="text" name="im" id="inputEstimatedBudget"
+                                                    <input type="text" name="ie" id="inputEstimatedBudget"
                                                         class="form-control">
                                                 </div>
                                             </div>
