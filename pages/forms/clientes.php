@@ -152,15 +152,9 @@ if($sql->rowCount() ){
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="produto.html" class="nav-link">
+                                    <a href="produto.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Produtos</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="subproduto.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Sub-Produto</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">

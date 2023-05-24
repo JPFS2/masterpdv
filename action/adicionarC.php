@@ -16,7 +16,7 @@ $complemento = filter_input(INPUT_POST,'complemento');
 $email = filter_input(INPUT_POST,'email');
 
 
-if($nome &&  $email){
+if($cnpj &&  $cpf){
 
 
     $sql = $pdo->prepare("SELECT * FROM cliente WHERE cpf = :cpf");

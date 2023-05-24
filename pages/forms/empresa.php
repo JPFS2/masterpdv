@@ -166,15 +166,9 @@ if($sql->rowCount() ){
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="produto.html" class="nav-link">
+                                    <a href="produto.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Produtos</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="subproduto.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Sub-Produto</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -298,10 +292,7 @@ if($sql->rowCount() ){
                             <div class="card-header">
                                 <h3 class="card-title">Dados Basicos</h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
-                                        title="Collapse">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
+
                                 </div>
                             </div>
                             <form action="../../action/adicionarE.php" method="post">

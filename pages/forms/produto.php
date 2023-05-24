@@ -1,3 +1,13 @@
+<?php 
+require '../../action/config.php';
+
+$lista = [];
+$sql = $pdo->query("SELECT * FROM produto");
+
+if($sql->rowCount() ){
+    $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -124,29 +134,30 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="validation.html" class="nav-link">
+                                    <a href="empresa.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Usuários</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="clientes.html" class="nav-link">
+                                    <a href="validation.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Usuários</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="clientes.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Clientes</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="produto.html" class="nav-link">
+                                    <a href="produto.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Produtos</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="subproduto.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Sub-Produto</p>
-                                    </a>
-                                </li>
+
                                 <li class="nav-item">
                                     <a href="fornecedor.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -304,8 +315,7 @@
                                         <div class="col-3">
                                             <div class="form-group">
                                                 <label for="inputEstimatedBudget">Armazenamento Interno</label>
-                                                <input type="text" name="armazenamento" class="form-control"
-                                                   >
+                                                <input type="text" name="armazenamento" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -347,76 +357,27 @@
                                     <table id="example2" class="table table-bordered table-hover">
                                         <thead>
                                             <tr>
+                                                <th>Código</th>
+                                                <th>Tipo</th>
                                                 <th>Descrição</th>
-                                                <th>Observação</th>
-                                                <th>Cor</th>
-                                                <th>IMEI</th>
+                                                <th>Modelo</th>
+                                                <th>Armazenamento</th>
+                                                <th>Memória</th>
+
                                             </tr>
                                         </thead>
+                                        <?php foreach($lista as $produto): ?>
                                         <tbody>
                                             <tr>
-                                                <td>Iphone X</td>
-                                                <td>Bateria 90%</td>
-                                                <td>Preto</td>
-                                                <td>123456789123</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Iphone X</td>
-                                                <td>Bateria 90%</td>
-                                                <td>Preto</td>
-                                                <td>123456789123</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Iphone X</td>
-                                                <td>Bateria 90%</td>
-                                                <td>Preto</td>
-                                                <td>123456789123</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Iphone X</td>
-                                                <td>Bateria 90%</td>
-                                                <td>Preto</td>
-                                                <td>123456789123</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Iphone X</td>
-                                                <td>Bateria 90%</td>
-                                                <td>Preto</td>
-                                                <td>123456789123</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Iphone X</td>
-                                                <td>Bateria 90%</td>
-                                                <td>Preto</td>
-                                                <td>123456789123</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Iphone X</td>
-                                                <td>Bateria 90%</td>
-                                                <td>Preto</td>
-                                                <td>123456789123</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Iphone X</td>
-                                                <td>Bateria 90%</td>
-                                                <td>Preto</td>
-                                                <td>123456789123</td>
-
+                                                <td><?= $produto['codproduto']; ?></td>
+                                                <td><?= $produto['tipo']; ?></td>
+                                                <td><?= $produto['descricao']; ?></td>
+                                                <td><?= $produto['modelo']; ?></td>
+                                                <td><?= $produto['armazenamento']; ?></td>
+                                                <td><?= $produto['memoria']; ?></td>
                                             </tr>
                                         </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Descrição</th>
-                                                <th>Observação</th>
-                                                <th>Cor</th>
-                                                <th>IMEI</th>
-                                            </tr>
-                                        </tfoot>
+                                        <?php endforeach; ?>
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
