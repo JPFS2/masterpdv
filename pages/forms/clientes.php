@@ -1,3 +1,13 @@
+<?php 
+require '../../action/config.php';
+
+$lista = [];
+$sql = $pdo->query("SELECT * FROM cliente");
+
+if($sql->rowCount() ){
+    $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -410,22 +420,42 @@
                                                     <table id="example2" class="table table-bordered table-hover">
                                                         <thead>
                                                             <tr>
+                                                                <th>Código</th>
                                                                 <th>Nome</th>
+                                                                <th>CNPJ</th>
+                                                                <th>CPF</th>
+                                                                <th>Inscrição estadual</th>
+                                                                <th>Contato</th>
                                                                 <th>Email</th>
+                                                                <th>CEP</th>
+                                                                <th>uf</th>
+                                                                <th>Cidade</th>
+                                                                <th>Bairro</th>
                                                                 <th>Endereço</th>
-                                                                <th>Ativo</th>
-                                                                <th>Doc. Garantia</th>
+                                                                <th>Numero</th>
+                                                                <th>Complemento</th>
                                                             </tr>
                                                         </thead>
+                                                        <?php foreach($lista as $cliente): ?>
                                                         <tbody>
                                                             <tr>
-                                                                <td>Trident</td>
-                                                                <td>teste@teste.com</td>
-                                                                <td>Rua teste ,numero 2</td>
-                                                                <td>Sim</td>
-                                                                <td>arquivo de garantia</td>
+                                                                <td><?= $cliente['codcliente']; ?></td>
+                                                                <td><?= $cliente['nome']; ?></td>
+                                                                <td><?= $cliente['cnpj']; ?></td>
+                                                                <td><?= $cliente['cpf']; ?></td>
+                                                                <td><?= $cliente['ie']; ?></td>
+                                                                <td><?= $cliente['cel']; ?></td>
+                                                                <td><?= $cliente['email']; ?></td>                                                               
+                                                                <td><?= $cliente['cep']; ?></td>
+                                                                <td><?= $cliente['uf']; ?></td>
+                                                                <td><?= $cliente['cidade']; ?></td>
+                                                                <td><?= $cliente['bairro']; ?></td>
+                                                                <td><?= $cliente['endereco']; ?></td>
+                                                                <td><?= $cliente['numero']; ?></td>                                                                                                                                                                 
+                                                                <td><?= $cliente['complemento']; ?></td>
+                                                                
                                                             </tr>
-
+                                                            <?php endforeach; ?>
                                                     </table>
                                                 </div>
                                                 <!-- /.card-body -->

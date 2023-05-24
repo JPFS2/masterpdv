@@ -328,7 +328,7 @@ if($sql->rowCount() ){
                                                     <table id="example2" class="table table-bordered table-hover">
                                                         <thead>
                                                             <tr>
-                                                                <th>ID</th>
+                                                                <th>Código</th>
                                                                 <th>Nome</th>
                                                                 <th>Email</th>
                                                                 <th>Senha</th>
