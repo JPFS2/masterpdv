@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 23-Maio-2023 às 20:53
+-- Tempo de geração: 25-Maio-2023 às 18:27
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -44,7 +44,14 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `complemento` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   PRIMARY KEY (`codcliente`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Extraindo dados da tabela `cliente`
+--
+
+INSERT INTO `cliente` (`codcliente`, `nome`, `cnpj`, `cpf`, `ie`, `cel`, `cep`, `endereco`, `numero`, `bairro`, `cidade`, `uf`, `complemento`, `email`) VALUES
+(1, 'Johnnathan Pacífico Ferreira Sousa', '20.953.141/0001-36', '075.113.513-52', '123321', '(88)99612-8637', '63118-250', 'Rua da bomba', 123, 'Parque Recreio', 'Crato', 'ce', 'apto B', 'tispotify2019@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -81,6 +88,61 @@ CREATE TABLE IF NOT EXISTS `empresa` (
 
 INSERT INTO `empresa` (`codempresa`, `razao`, `fantasia`, `cnpj`, `ie`, `im`, `tel`, `cel`, `cep`, `endereco`, `numero`, `bairro`, `cidade`, `uf`, `complemento`, `email`, `instagram`, `facebook`) VALUES
 (1, 'Iphone', 'Nome Fantasia', '12.345.678/0001-90', 1234567890, 1234567890, '(88)3571-1486', '(88)98844-1448', '63.000-000', '(88)3571-1486', '437', 'Salesiano', 'Juazeiro do Norte', 'CE', '', 'tispotify2019@gmail.com', 'dasd', 'sadsad');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `fornecedor`
+--
+
+DROP TABLE IF EXISTS `fornecedor`;
+CREATE TABLE IF NOT EXISTS `fornecedor` (
+  `codfornecedor` int NOT NULL AUTO_INCREMENT,
+  `razao` varchar(100) NOT NULL,
+  `fantasia` varchar(100) NOT NULL,
+  `cnpj` varchar(20) NOT NULL,
+  `ie` varchar(20) NOT NULL,
+  `endereco` varchar(100) NOT NULL,
+  `numero` varchar(50) NOT NULL,
+  `bairro` varchar(50) NOT NULL,
+  `cidade` varchar(50) NOT NULL,
+  `uf` varchar(2) NOT NULL,
+  `cep` varchar(20) NOT NULL,
+  `tel` varchar(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  PRIMARY KEY (`codfornecedor`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Extraindo dados da tabela `fornecedor`
+--
+
+INSERT INTO `fornecedor` (`codfornecedor`, `razao`, `fantasia`, `cnpj`, `ie`, `endereco`, `numero`, `bairro`, `cidade`, `uf`, `cep`, `tel`, `email`) VALUES
+(1, 'iphoneee12321123', 'iphone112', '20.953.141/0001-36', '123321', 'Rua da bomba', '123', 'Parque Recreio', 'Crato', 'ce', '63118-250', '(88) 99999-9999', 'tispotify2019@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `produto`
+--
+
+DROP TABLE IF EXISTS `produto`;
+CREATE TABLE IF NOT EXISTS `produto` (
+  `codproduto` int NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(100) NOT NULL,
+  `descricao` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `modelo` varchar(100) NOT NULL,
+  `armazenamento` varchar(50) NOT NULL,
+  `memoria` varchar(50) NOT NULL,
+  PRIMARY KEY (`codproduto`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Extraindo dados da tabela `produto`
+--
+
+INSERT INTO `produto` (`codproduto`, `tipo`, `descricao`, `modelo`, `armazenamento`, `memoria`) VALUES
+(1, 'Celular', 'Iphone', 'X PRO MAX', '128 GB', '16 GB');
 
 -- --------------------------------------------------------
 
