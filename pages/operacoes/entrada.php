@@ -296,13 +296,19 @@ if($sql->rowCount() ){
                                                 </select>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6">
+                                
+                                        <div class="col-5">
                                             <div class="form-group">
-                                                <label for="inputEstimatedBudget">Descrição</label>
-                                                <input type="text" name="descricao" id="inputEstimatedBudget"
-                                                    class="form-control">
+                                                <label for="inputEstimatedBudget">Produto</label>
+                                                <select name="cidade"
+                                                    class="form-control select2bs4 select2-hidden-accessible"
+                                                    style="width: 100%;" data-select2-id="21" tabindex="-1"
+                                                    aria-hidden="true">
+                                                    <option selected="selected" data-select2-id="23">Juazeiro do Norte
+                                                    </option>
+                                                    <option data-select2-id="42">Crato</option>
+                                                    <option data-select2-id="43">Barbalha</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-6">
@@ -324,6 +330,12 @@ if($sql->rowCount() ){
                                                 <input type="text" name="memoria" class="form-control">
                                             </div>
                                         </div>
+                                        <div class="col-1">
+                                            <div class="form-group">
+                                                <label for="inputEstimatedBudget">Quantidade</label>
+                                                <input type="text" name="memoria" class="form-control">
+                                            </div>
+                                        </div>
                                         </imput>
                                         <div class="col-12">
                                             <div class="form-group">
@@ -332,6 +344,7 @@ if($sql->rowCount() ){
                                             </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </form>
 
