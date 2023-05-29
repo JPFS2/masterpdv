@@ -2,6 +2,12 @@
 require '../../action/config.php';
 
 $lista = [];
+$sql = $pdo->query("SELECT * FROM fornecedor");
+
+if($sql->rowCount() ){
+    $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
+}
+$lista2 = [];
 $sql = $pdo->query("SELECT * FROM produto");
 
 if($sql->rowCount() ){
@@ -283,17 +289,16 @@ if($sql->rowCount() ){
                             <form action="../../action/adicionarP.php" method="post">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-5">
+                                        <div class="col-6">
                                             <div class="form-group">
                                                 <label for="inputEstimatedBudget">fornecedor</label>
                                                 <select name="cidade"
                                                     class="form-control select2bs4 select2-hidden-accessible"
                                                     style="width: 100%;" data-select2-id="21" tabindex="-1"
                                                     aria-hidden="true">
-                                                    <option selected="selected" data-select2-id="23">Juazeiro do Norte
-                                                    </option>
-                                                    <option data-select2-id="42">Crato</option>
-                                                    <option data-select2-id="43">Barbalha</option>
+                                                    <?php foreach($lista as $fornecedor): ?>
+                                                    <option selected="selected" data-select2-id="23"><?= $fornecedor['razao']; ?></option>
+                                                    <?php endforeach; ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -319,16 +324,16 @@ if($sql->rowCount() ){
                                                 class="form-control select2bs4 select2-hidden-accessible"
                                                 style="width: 100%;" data-select2-id="21" tabindex="-1"
                                                 aria-hidden="true">
-                                                <option selected="selected" data-select2-id="23">Juazeiro do Norte
-                                                </option>
-                                                <option data-select2-id="42">Crato</option>
-                                                <option data-select2-id="43">Barbalha</option>
+                                                <?php foreach($lista2 as $produto): ?>
+                                                <option selected="selected" data-select2-id="23"><?= $produto['descricao']; ?> <?= $produto['modelo']; ?></option>
+                                                <?php endforeach; ?>
+                                                
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <label for="inputEstimatedBudget">imei</label>
+                                            <label for="inputEstimatedBudget">IMEI</label>
                                             <input type="text" name="modelo" id="inputEstimatedBudget"
                                                 class="form-control">
                                         </div>
@@ -394,10 +399,10 @@ if($sql->rowCount() ){
 
                                         </tr>
                                     </thead>
-                                    <?php foreach($lista as $produto): ?>
+                                    
                                     <tbody>
                                         <tr>
-                                            <td><?= $produto['codproduto']; ?></td>
+                                            <td></td>
                                             <td><?= $produto['tipo']; ?></td>
                                             <td><?= $produto['descricao']; ?></td>
                                             <td><?= $produto['modelo']; ?></td>
@@ -405,7 +410,7 @@ if($sql->rowCount() ){
                                             <td><?= $produto['memoria']; ?></td>
                                         </tr>
                                     </tbody>
-                                    <?php endforeach; ?>
+                                   
                                 </table>
                             </div>
                             <!-- /.card-body -->
