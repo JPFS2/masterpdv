@@ -11,9 +11,9 @@ if($nome && $email){
     $sql->bindValue(':email',$email);
     $sql->execute();
 
-    header('Location: index.php');
+    header('Location: ../pages/forms/validation.php');
     exit();
 }else{
-    header('Location: index.php');
+    header('Location: ../pages/forms/validation.php');
     exit();
 }

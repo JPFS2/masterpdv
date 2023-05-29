@@ -390,10 +390,6 @@ if($sql->rowCount() ){
                                                     </option>
                                                     <option data-select2-id="42">Crato</option>
                                                     <option data-select2-id="43">Barbalha</option>
-                                                    <option data-select2-id="44">Delaware</option>
-                                                    <option data-select2-id="45">Tennessee</option>
-                                                    <option data-select2-id="46">Texas</option>
-                                                    <option data-select2-id="47">Washington</option>
                                                 </select>
                                             </div>
                                         </div>
