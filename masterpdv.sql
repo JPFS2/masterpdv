@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 25-Maio-2023 às 18:27
+-- Tempo de geração: 29-Maio-2023 às 20:48
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -92,6 +92,25 @@ INSERT INTO `empresa` (`codempresa`, `razao`, `fantasia`, `cnpj`, `ie`, `im`, `t
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `estoque`
+--
+
+DROP TABLE IF EXISTS `estoque`;
+CREATE TABLE IF NOT EXISTS `estoque` (
+  `codentrada` int NOT NULL AUTO_INCREMENT,
+  `codproduto` int NOT NULL,
+  `codfornecedor` int NOT NULL,
+  `tipo` int NOT NULL,
+  `imei` int NOT NULL,
+  `quantidade` int NOT NULL,
+  `dataentrada` date NOT NULL,
+  `datasaida` date NOT NULL,
+  PRIMARY KEY (`codentrada`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `fornecedor`
 --
 
@@ -135,14 +154,16 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `armazenamento` varchar(50) NOT NULL,
   `memoria` varchar(50) NOT NULL,
   PRIMARY KEY (`codproduto`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `produto`
 --
 
 INSERT INTO `produto` (`codproduto`, `tipo`, `descricao`, `modelo`, `armazenamento`, `memoria`) VALUES
-(1, 'Celular', 'Iphone', 'X PRO MAX', '128 GB', '16 GB');
+(1, 'Celular', 'Iphone', 'X PRO MAX', '128 GB', '16 GB'),
+(2, 'Acessório', 'carregador', 'C', '', ''),
+(3, 'Acessório', 'Fone de ouvido', 'sem fio', '', '');
 
 -- --------------------------------------------------------
 
