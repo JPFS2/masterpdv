@@ -352,7 +352,7 @@ if($sql->rowCount() ){
                                                         class="form-control">
                                                 </div>
                                             </div>
-                                            <div class="col-5">
+                                            <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="inputEstimatedBudget">Bairro</label>
                                                     <input type="text" name="bairro" id="inputEstimatedBudget"

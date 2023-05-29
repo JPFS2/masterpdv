@@ -136,7 +136,7 @@ if($sql->rowCount() ){
                                 <li class="nav-item">
                                     <a href="empresa.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Usuários</p>
+                                        <p>Empresa</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -275,7 +275,7 @@ if($sql->rowCount() ){
                     <div class="col-md-12">
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Produto</h3>
+                                <h3 class="card-title">Cadastre um novo produto</h3>
 
                                 <div class="card-tools">
                                 </div>
