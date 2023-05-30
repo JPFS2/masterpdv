@@ -305,11 +305,11 @@ if($sql->rowCount() ){
                                     </div>
                                     -->
                                     <div class="col-12">
-                                                <div class="form-group">
-                                                    <input type="submit" value="Cadastrar"
-                                                        class="btn btn-success float-right m-1">
-                                                </div>
+                                            <div class="form-group">
+                                                <input type="submit" value="Cadastrar"
+                                                    class="btn btn-success float-right m-1">
                                             </div>
+                                        </div>
                                 </form>
                             </div>
                             <!-- /.card -->
