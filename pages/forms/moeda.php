@@ -2,7 +2,7 @@
 require '../../action/config.php';
 
 $lista = [];
-$sql = $pdo->query("SELECT * FROM usuario");
+$sql = $pdo->query("SELECT * FROM pagamento");
 
 if($sql->rowCount() ){
     $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -323,19 +323,17 @@ if($sql->rowCount() ){
                                                         <thead>
                                                             <tr>
                                                                 <th>Código</th>
-                                                                <th>Nome</th>
-                                                                <th>Email</th>
-                                                                <th>Senha</th>
+                                                                <th>Moeda</th>
+                                                                
                                                                 <th></th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <?php foreach($lista as $usuario): ?>
+                                                            <?php foreach($lista as $moeda): ?>
                                                             <tr>
-                                                                <td><?= $usuario['id']; ?></td>
-                                                                <td><?= $usuario['nome']; ?></td>
-                                                                <td><?= $usuario['email']; ?></td>
-                                                                <td><?= $usuario['senha']; ?></td>
+                                                                <td><?= $moeda['codpagamento']; ?></td>
+                                                                <td><?= $moeda['moeda']; ?></td>
+                                                                
                                                                 <th>
                                                                 </th>
                                                             </tr>
