@@ -281,28 +281,30 @@ if($sql->rowCount() ){
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form action="../../action/adicionarU.php" method="post" class="quickForm">
+                                <form action="../../action/adicionarPG.php" method="post" class="quickForm">
                                     <div class="card-body">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Nome</label>
-                                            <input type="name" name="nome" class="form-control" id="nome"
-                                                placeholder="Nome" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Endereço de email</label>
-                                            <input type="email" name="email" class="form-control" id="email"
-                                                placeholder="E-mail" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Senha</label>
-                                            <input type="password" name="senha" class="form-control" id="senha"
-                                                placeholder="Senha" required>
+                                        <div class="col-4">
+                                            <div class="form-group">
+                                                <label for="inputEstimatedBudget">Cidade</label>
+                                                <select name="cidade"
+                                                    class="form-control select2bs4 select2-hidden-accessible"
+                                                    style="width: 100%;" data-select2-id="21" tabindex="-1"
+                                                    aria-hidden="true">
+                                                    <option selected="selected" data-select2-id="23">Crato
+                                                    </option>
+                                                    <option data-select2-id="42">Juazeiro do Norte</option>
+                                                    <option data-select2-id="43">Barbalha</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- /.card-body -->
-                                    <div class="card-footer">
-                                        <button type="submit" class="btn btn-primary">Cadastrar</button>
-                                    </div>
+                                    <div class="col-12">
+                                                <div class="form-group">
+                                                    <input type="submit" value="Cadastrar"
+                                                        class="btn btn-success float-right m-1">
+                                                </div>
+                                            </div>
                                 </form>
                             </div>
                             <!-- /.card -->
@@ -324,7 +326,7 @@ if($sql->rowCount() ){
                                                             <tr>
                                                                 <th>Código</th>
                                                                 <th>Moeda</th>
-                                                                
+
                                                                 <th></th>
                                                             </tr>
                                                         </thead>
@@ -333,7 +335,7 @@ if($sql->rowCount() ){
                                                             <tr>
                                                                 <td><?= $moeda['codpagamento']; ?></td>
                                                                 <td><?= $moeda['moeda']; ?></td>
-                                                                
+
                                                                 <th>
                                                                 </th>
                                                             </tr>

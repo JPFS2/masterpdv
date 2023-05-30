@@ -299,10 +299,17 @@ if($sql->rowCount() ){
                                                 placeholder="Senha" required>
                                         </div>
                                     </div>
-                                    <!-- /.card-body -->
+                                    <!-- /.card-body 
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary">Cadastrar</button>
                                     </div>
+                                    -->
+                                    <div class="col-12">
+                                                <div class="form-group">
+                                                    <input type="submit" value="Cadastrar"
+                                                        class="btn btn-success float-right m-1">
+                                                </div>
+                                            </div>
                                 </form>
                             </div>
                             <!-- /.card -->
