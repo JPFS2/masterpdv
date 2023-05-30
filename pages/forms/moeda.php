@@ -2,20 +2,19 @@
 require '../../action/config.php';
 
 $lista = [];
-$sql = $pdo->query("SELECT * FROM pagamento");
+$sql = $pdo->query("SELECT * FROM produto");
 
 if($sql->rowCount() ){
     $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PDV | Moeda</title>
+    <title>PDV | Produtos</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -39,6 +38,7 @@ if($sql->rowCount() ){
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
+
             </ul>
 
             <!-- Right navbar links -->
@@ -157,6 +157,7 @@ if($sql->rowCount() ){
                                         <p>Produtos</p>
                                     </a>
                                 </li>
+
                                 <li class="nav-item">
                                     <a href="fornecedor.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -256,12 +257,12 @@ if($sql->rowCount() ){
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Usuários</h1>
+                            <h1>Produtos</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="../../index.html">Inicio</a></li>
-                                <li class="breadcrumb-item active">Usuários</li>
+                                <li class="breadcrumb-item active">Produtos</li>
                             </ol>
                         </div>
                     </div>
@@ -270,169 +271,206 @@ if($sql->rowCount() ){
 
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <!-- left column -->
-                        <div class="col-md-12">
-                            <!-- jquery validation -->
-                            <div class="card card-primary">
-                                <div class="card-header">
-                                    <h3 class="card-title">Cadastre um novo usuário</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Cadastre um novo produto</h3>
+
+                                <div class="card-tools">
                                 </div>
-                                <!-- /.card-header -->
-                                <!-- form start -->
-                                <form action="../../action/adicionarPG.php" method="post" class="quickForm">
-                                    <div class="card-body">
-                                        <div class="col-4">
+                            </div>
+                            <form action="../../action/adicionarP.php" method="post">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-3">
                                             <div class="form-group">
-                                                <label for="inputEstimatedBudget">Cidade</label>
-                                                <select name="cidade"
+                                                <label for="inputEstimatedBudget">Tipo</label>
+                                                <select name="tipo"
                                                     class="form-control select2bs4 select2-hidden-accessible"
                                                     style="width: 100%;" data-select2-id="21" tabindex="-1"
                                                     aria-hidden="true">
-                                                    <option selected="selected" data-select2-id="23">Crato
-                                                    </option>
-                                                    <option data-select2-id="42">Juazeiro do Norte</option>
-                                                    <option data-select2-id="43">Barbalha</option>
+                                                    <option selected="selected" data-select2-id="23">Celular</option>
+                                                    <option data-toggle-form-edit="#id-form" data-select2-id="42">
+                                                        Acessório</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- /.card-body -->
-                                    <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-6">
                                             <div class="form-group">
-                                                <input type="submit" value="Cadastrar"
+                                                <label for="inputEstimatedBudget">Descrição</label>
+                                                <input type="text" name="descricao" id="inputEstimatedBudget"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="inputEstimatedBudget">Modelo</label>
+                                                <input type="text" name="modelo" id="inputEstimatedBudget"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="form-group">
+                                                <label for="inputEstimatedBudget">Armazenamento Interno</label>
+                                                <input type="text" name="armazenamento" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="form-group">
+                                                <label for="inputEstimatedBudget">Memória</label>
+                                                <input type="text" name="memoria" class="form-control">
+                                            </div>
+                                        </div>
+                                        </imput>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <input type="submit" value="Salvar"
                                                     class="btn btn-success float-right m-1">
                                             </div>
                                         </div>
-                                </form>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
+
+            <br>
+            <!-- /.content-wrapper -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Produtos cadastrados</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table id="example2" class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Código</th>
+                                                <th>Tipo</th>
+                                                <th>Descrição</th>
+                                                <th>Modelo</th>
+                                                <th>Armazenamento</th>
+                                                <th>Memória</th>
+
+                                            </tr>
+                                        </thead>
+                                        <?php foreach($lista as $produto): ?>
+                                        <tbody>
+                                            <tr>
+                                                <td><?= $produto['codproduto']; ?></td>
+                                                <td><?= $produto['tipo']; ?></td>
+                                                <td><?= $produto['descricao']; ?></td>
+                                                <td><?= $produto['modelo']; ?></td>
+                                                <td><?= $produto['armazenamento']; ?></td>
+                                                <td><?= $produto['memoria']; ?></td>
+                                            </tr>
+                                        </tbody>
+                                        <?php endforeach; ?>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
                             </div>
                             <!-- /.card -->
-                            <!-- Main content -->
-
-                            <section class="content">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    <h3 class="card-title">Usuários cadastrados</h3>
-                                                </div>
-
-                                                <!-- /.card-header -->
-                                                <div class="card-body">
-                                                    <table id="example2" class="table table-bordered table-hover">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Código</th>
-                                                                <th>Moeda</th>
-
-                                                                <th></th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <?php foreach($lista as $moeda): ?>
-                                                            <tr>
-                                                                <td><?= $moeda['codpagamento']; ?></td>
-                                                                <td><?= $moeda['moeda']; ?></td>
-
-                                                                <th>
-                                                                </th>
-                                                            </tr>
-                                                            <?php endforeach; ?>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                                <!-- /.card-body -->
-                                            </div>
-                                            <!-- /.card -->
-                                        </div>
-                                        <!--/.col (left) -->
-                                        <!-- right column -->
-                                        <div class="col-md-6">
-
-                                        </div>
-                                        <!--/.col (right) -->
-                                    </div>
-                                    <!-- /.row -->
-                                </div><!-- /.container-fluid -->
-                            </section>
-                            <!-- /.content -->
                         </div>
-                        <!-- /.content-wrapper -->
-                        <footer class="main-footer">
-                            <div class="float-right d-none d-sm-block">
+                        <!--/.col (left) -->
+                        <!-- right column -->
+                        <div class="col-md-6">
 
-                            </div>
-                            <strong>Copyright &copy; 2023 <a href="#">PDV</a>.</strong> Todos os direitos reservados
-                        </footer>
-
-                        <!-- Control Sidebar -->
-                        <aside class="control-sidebar control-sidebar-dark">
-                            <!-- Control sidebar content goes here -->
-                        </aside>
-                        <!-- /.control-sidebar -->
+                        </div>
+                        <!--/.col (right) -->
                     </div>
-                    <!-- ./wrapper -->
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <div class="float-right d-none d-sm-block">
 
-                    <!-- jQuery -->
-                    <script src="../../plugins/jquery/jquery.min.js"></script>
-                    <!-- Bootstrap 4 -->
-                    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-                    <!-- jquery-validation -->
-                    <script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
-                    <script src="../../plugins/jquery-validation/additional-methods.min.js"></script>
-                    <!-- AdminLTE App -->
-                    <script src="../../dist/js/adminlte.min.js"></script>
-                    <!-- AdminLTE for demo purposes -->
-                    <script src="../../dist/js/demo.js"></script>
-                    <!-- Page specific script -->
-                    <script>
-                    $(function() {
-                        $.validator.setDefaults({
-                            submitHandler: function() {
-                                alert("Form successful submitted!");
-                            }
-                        });
-                        $('#quickForm').validate({
-                            rules: {
-                                email: {
-                                    required: true,
-                                    email: true,
-                                },
-                                password: {
-                                    required: true,
-                                    minlength: 5
-                                },
-                                terms: {
-                                    required: true
-                                },
-                            },
-                            messages: {
-                                email: {
-                                    required: "Please enter a email address",
-                                    email: "Please enter a valid email address"
-                                },
-                                password: {
-                                    required: "Please provide a password",
-                                    minlength: "Your password must be at least 5 characters long"
-                                },
-                                terms: "Please accept our terms"
-                            },
-                            errorElement: 'span',
-                            errorPlacement: function(error, element) {
-                                error.addClass('invalid-feedback');
-                                element.closest('.form-group').append(error);
-                            },
-                            highlight: function(element, errorClass, validClass) {
-                                $(element).addClass('is-invalid');
-                            },
-                            unhighlight: function(element, errorClass, validClass) {
-                                $(element).removeClass('is-invalid');
-                            }
-                        });
-                    });
-                    </script>
+        </div>
+        <strong>Copyright &copy; 2023 <a href="#">PDV</a>.</strong> Todos os direitos reservados
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jquery-validation -->
+    <script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="../../plugins/jquery-validation/additional-methods.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+    <!-- Page specific script -->
+    <script>
+    $(function() {
+        $.validator.setDefaults({
+            submitHandler: function() {
+                alert("Form successful submitted!");
+            }
+        });
+        $('#quickForm').validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true,
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                },
+                terms: {
+                    required: true
+                },
+            },
+            messages: {
+                email: {
+                    required: "Please enter a email address",
+                    email: "Please enter a valid email address"
+                },
+                password: {
+                    required: "Please provide a password",
+                    minlength: "Your password must be at least 5 characters long"
+                },
+                terms: "Please accept our terms"
+            },
+            errorElement: 'span',
+            errorPlacement: function(error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight: function(element, errorClass, validClass) {
+                $(element).addClass('is-invalid');
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).removeClass('is-invalid');
+            }
+        });
+    });
+    </script>
 </body>
 
 </html>
